@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NASA SAR Dashboard Design System - Professional satellite monitoring aesthetic */
+
+@layer base {
+  :root {
+    /* Deep Space & Satellite Theme */
+    --background: 217 24% 8%;  /* Deep space blue */
+    --foreground: 210 40% 95%; /* Near white for text */
+
+    --card: 220 20% 12%;       /* Dark card background */
+    --card-foreground: 210 40% 95%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 95%;
+
+    /* NASA Blue & Forest Green Palette */
+    --primary: 142 76% 36%;    /* Forest green for active states */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 32% 18%;  /* Darker blue-gray */
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 217 24% 15%;      /* Muted background */
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 214 84% 56%;     /* Bright satellite blue */
+    --accent-foreground: 210 40% 98%;
+
+    /* Alert colors for environmental monitoring */
+    --destructive: 0 84% 60%;  /* Red for deforestation alerts */
+    --destructive-foreground: 210 40% 98%;
+    
+    --warning: 45 93% 47%;     /* Orange for warnings */
+    --warning-foreground: 210 40% 98%;
+    
+    --success: 142 76% 36%;    /* Green for healthy forests */
+    --success-foreground: 210 40% 98%;
+
+    --border: 217 24% 20%;     /* Subtle borders */
+    --input: 217 24% 15%;      /* Input backgrounds */
+    --ring: 142 76% 36%;       /* Focus rings in forest green */
+
+    /* Custom satellite monitoring colors */
+    --radar-primary: 142 76% 36%;     /* Main radar/SAR green */
+    --radar-secondary: 214 84% 56%;   /* Satellite blue */
+    --carbon-high: 84 81% 44%;        /* High carbon areas */
+    --deforestation: 0 84% 60%;       /* Deforestation red */
+    --water: 214 84% 56%;             /* Water bodies */
+    
+    /* Gradients for satellite aesthetic */
+    --gradient-space: linear-gradient(135deg, hsl(217 24% 8%), hsl(220 20% 12%));
+    --gradient-radar: linear-gradient(135deg, hsl(142 76% 36% / 0.2), hsl(214 84% 56% / 0.2));
+    --gradient-earth: linear-gradient(180deg, hsl(217 24% 8%), hsl(142 76% 36% / 0.1));
+    
+    /* Shadows for depth */
+    --shadow-satellite: 0 25px 50px -12px hsl(142 76% 36% / 0.25);
+    --shadow-radar: 0 0 30px hsl(142 76% 36% / 0.3);
+    --shadow-glow: 0 0 40px hsl(214 84% 56% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radar-pulse: radar-pulse 2s infinite;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    /* Light mode for daytime monitoring */
+    --background: 210 40% 98%;
+    --foreground: 217 24% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 24% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 24% 8%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 217 24% 8%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 214 84% 56%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 142 76% 36%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: var(--gradient-space);
+  }
+  
+  /* Custom animations for satellite dashboard */
+  @keyframes radar-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+  
+  @keyframes satellite-orbit {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes data-flow {
+    0% { transform: translateY(0) opacity(0); }
+    50% { opacity: 1; }
+    100% { transform: translateY(-20px) opacity(0); }
+  }
+  
+  /* Scrollbar styling for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent));
+  }
+}
+
+/* Leaflet Map Customizations */
+.leaflet-container {
+  background: hsl(var(--background)) !important;
+}
+
+.leaflet-tile {
+  filter: brightness(0.7) contrast(1.2) hue-rotate(200deg);
+}
+
+.leaflet-popup-content-wrapper {
+  background: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--shadow-glow) !important;
+}
+
+.leaflet-popup-tip {
+  background: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+}
+
+.leaflet-popup-content {
+  color: hsl(var(--foreground)) !important;
+  margin: 0 !important;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+  border: none !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: hsl(var(--accent)) !important;
+  color: hsl(var(--accent-foreground)) !important;
+}
