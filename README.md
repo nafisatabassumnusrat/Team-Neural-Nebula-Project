@@ -13,3 +13,4 @@ Forest SAR Prototype 🌍
 Leveraging NASA’s Synthetic Aperture Radar (SAR) data, this prototype enables real-time monitoring of forest health and environmental changes. It provides actionable insights on deforestation, land degradation, and climate-related risks. The system supports informed decision-making for conservation efforts and promotes sustainable management of natural resources.
 
 Together, these components create a holistic ecosystem that combines education, skill development, and environmental monitoring. Team Neural Nebula aims to empower students, researchers, and communities with the tools and knowledge to learn, innovate, and protect our planet, demonstrating the transformative potential of AI and satellite data in solving real-world challenges.# Team_Neural_Nebula_Project
+# Team-Neural-Nebula-Project
